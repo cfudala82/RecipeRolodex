@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchRecipe } from '../actions/index';
 import TextField from 'material-ui/TextField';
 import { orange500 } from 'material-ui/styles/colors';
 import ActionSearch from 'material-ui/svg-icons/action/search';
@@ -26,7 +29,10 @@ class SearchBar extends Component {
     console.log(this.state);
     event.preventDefault();
 
-    // search api
+    // search fetch api info
+    this.props.fetchRecipe(this.state.term);
+    //clear out search input
+    this.setState({term: ''});
   }
 
   render() {
@@ -56,4 +62,8 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchRecipe }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar);
