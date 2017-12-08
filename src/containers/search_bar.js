@@ -39,7 +39,7 @@ class SearchBar extends Component {
   render() {
     return (
       <Paper
-        style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginTop: 20}}
+        style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginTop: 20, maxWidth: 773, marginLeft: 'auto', marginRight: 'auto'}}
         zDepth={2}
         rounded={false}
       >

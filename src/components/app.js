@@ -7,6 +7,7 @@ import {fade} from 'material-ui/utils/colorManipulator';
 import NavBar from '../components/nav_bar';
 import SearchBar from '../containers/search_bar';
 import ViewRecipe from '../components/view_recipe';
+import RecipeList from '../components/recipe_list';
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -38,6 +39,7 @@ class App extends Component {
             <NavBar />
             <SearchBar />
             <ViewRecipe />
+            <RecipeList />
           </div>
         </MuiThemeProvider>
       </div>
