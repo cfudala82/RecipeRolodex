@@ -35,6 +35,7 @@ class RecipeList extends Component {
           key={r.recipe.uri}
           title={r.recipe.label}
           subtitle={<span>from <b>{r.recipe.source}</b></span>}
+          onClick={() => {console.log(r.recipe.url)}}
           actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
         >
           <img src={r.recipe.image} alt={r.recipe.label}/>
