@@ -4,7 +4,8 @@ export default function(state=[], action) {
   switch (action.type) {
     case FETCH_RECIPE:
       console.log(action.payload);
-      return action.payload.data.hits;
+      return action.payload.data.hits
+    default:
+      return state;
   }
-  return state;
 }

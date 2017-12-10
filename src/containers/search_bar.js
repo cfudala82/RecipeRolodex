@@ -19,7 +19,9 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {term: ''};
+    this.state = {
+      term: ''
+    };
   }
 
   onInputChange(event) {
@@ -39,8 +41,8 @@ class SearchBar extends Component {
   render() {
     return (
       <Paper
-        style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginTop: 20, maxWidth: 773, marginLeft: 'auto', marginRight: 'auto'}}
-        zDepth={2}
+        style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', maxWidth: 750, marginLeft: 'auto', marginRight: 'auto'}}
+        zDepth={5}
         rounded={false}
       >
         <form onSubmit={(e) => this.submitForm(e)} style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>

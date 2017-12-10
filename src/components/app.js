@@ -3,10 +3,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {  orange800, orange900, yellow500, grey100, grey300, grey400, grey500, white, darkBlack, fullBlack, orange100} from 'material-ui/styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
+import backgroundImage from '../images/spices.jpg';
 
 import NavBar from '../components/nav_bar';
 import SearchBar from '../containers/search_bar';
-import ViewRecipe from '../components/view_recipe';
 import RecipeList from '../components/recipe_list';
 
 const muiTheme = getMuiTheme({
@@ -35,10 +35,13 @@ class App extends Component {
         <MuiThemeProvider
           muiTheme={muiTheme}
         >
-          <div>
+          <div style={{ backgroundSize: 'cover',
+            overflow: 'hidden',
+            backgroundImage: "url(" + backgroundImage + ")"
+          }}>
             <NavBar />
             <SearchBar />
-            <ViewRecipe />
+
             <RecipeList />
           </div>
         </MuiThemeProvider>

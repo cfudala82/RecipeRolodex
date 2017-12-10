@@ -5,14 +5,16 @@ import Paper from 'material-ui/Paper';
 class NavBar extends Component {
   render() {
     return (
-      <Paper
-        zDepth={2}
-      >
-        <AppBar
-          title="Recipe Rolodex"
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
-        />
-      </Paper>
+      <div style={{margin: 30}}>
+        <Paper
+          zDepth={5}
+        >
+          <AppBar
+            title="Recipe Rolodex"
+            iconClassNameRight="muidocs-icon-navigation-expand-more"
+          />
+        </Paper>
+      </div>
     );
   }
 }

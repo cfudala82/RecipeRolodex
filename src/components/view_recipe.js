@@ -14,27 +14,13 @@ class ViewRecipe extends Component {
 
   render() {
     return(
-      <div style={{display: 'flex', flexWrap: 'nonwrap', justifyContent: 'center', margin: 20}}>
+      <div>
         <Paper
-          zDepth={2}
+          zDepth={5}
+          style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginTop: 20, maxWidth: 625, marginLeft: 'auto', marginRight: 'auto', marginBottom: 20}}
         >
-        <GridList
-          cols={1}
-          cellHeight={340}
-          padding={1}
-        >
-        <GridTile
-          key="https://www.edamam.com/web-img/2cc/2cc78c72b75b0c31f6f2bbe6060acf24.jpg"
-          title=''
-          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-          actionPosition="left"
-          titlePosition="top"
-          titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-        >
-          <img  src={RecipeSvg} alt="Breakfast Pizza" onClick={() => this.imgClick()} />
-        </GridTile>
-        </GridList>
-      </Paper>
+          <img  src={RecipeSvg} alt="Breakfast Pizza" height="400" width="625" onClick={() => this.imgClick()} />
+        </Paper>
       </div>
     );
   }
