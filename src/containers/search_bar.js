@@ -31,7 +31,6 @@ class SearchBar extends Component {
   submitForm(event){
     console.log(this.state);
     event.preventDefault();
-
     // fetch api info
     this.props.fetchRecipe(this.state.term);
     //clear out search input

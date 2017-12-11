@@ -41,7 +41,6 @@ class App extends Component {
           }}>
             <NavBar />
             <SearchBar />
-
             <RecipeList />
           </div>
         </MuiThemeProvider>
