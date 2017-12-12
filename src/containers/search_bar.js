@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import { fetchRecipe } from '../actions/index';
+
 import TextField from 'material-ui/TextField';
 import { orange500 } from 'material-ui/styles/colors';
 import ActionSearch from 'material-ui/svg-icons/action/search';
