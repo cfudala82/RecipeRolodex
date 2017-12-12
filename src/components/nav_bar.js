@@ -8,33 +8,25 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import MenuItem from 'material-ui/MenuItem';
 import Toggle from 'material-ui/Toggle';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import FlatButton from 'material-ui/FlatButton';
+import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 
+import {Link} from 'react-router-dom';
 
-const Logged = (props) => (
-  <IconMenu
-    {...props}
-    iconButtonElement={
-      <IconButton><MoreVertIcon /></IconButton>
-    }
-    targetOrigin={{horizontal: 'right', vertical: 'top'}}
-    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-  >
-    <MenuItem primaryText="Refresh" />
-    <MenuItem primaryText="Help" />
-    <MenuItem primaryText="Sign out" />
-  </IconMenu>
-);
-
-
-Logged.muiName = 'IconMenu';
-
-
+const MenuBar = () => {
+  return (
+    <IconMenu iconButtonElement={<IconButton iconStyle={{color: "white"}}><NavigationMenu /></IconButton>}>
+      <MenuItem>
+        <Link to="/">Home</Link>
+      </MenuItem>
+      <MenuItem primaryText="Help" />
+      <MenuItem primaryText="Sign out" />
+    </IconMenu>
+  )
+}
 
 class NavBar extends Component {
   render() {
-
-
-
     return (
       <div style={{margin: 30}}>
         <Paper
@@ -42,9 +34,9 @@ class NavBar extends Component {
         >
           <AppBar
             title="Recipe Rolodex"
-            iconClassNameRight="muidocs-icon-navigation-expand-more"
-            iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-          />
+            iconElementLeft={<MenuBar/>}
+            iconElementRight={<FlatButton label="My Recipes" />}
+            />
         </Paper>
       </div>
     );
