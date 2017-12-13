@@ -13,6 +13,8 @@ import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 
 import {Link} from 'react-router-dom';
 
+import {auth} from './fsociety';
+
 const MenuBar = () => {
   return (
     <IconMenu iconButtonElement={<IconButton iconStyle={{color: "#FFE0B2"}}><NavigationMenu /></IconButton>}>
@@ -25,17 +27,19 @@ const MenuBar = () => {
   )
 }
 
-// login () {
-//   auth()
-//     .then(function (user) {
-//       console.log(user);
-//     })
-//     .catch(function (e) {
-//       console.log(e);
-//     });
-// }
+
 
 class NavBar extends Component {
+  login () {
+    auth()
+      .then(function (user) {
+        console.log(user);
+      })
+      .catch(function (e) {
+        console.log(e);
+      });
+  }
+  
   render() {
     return (
       <div style={{margin: 30}}>
@@ -45,7 +49,7 @@ class NavBar extends Component {
           <AppBar
             title="Recipe Rolodex"
             iconElementLeft={<MenuBar/>}
-            iconElementRight={<FlatButton label="Login" />}
+            iconElementRight={<FlatButton label="Login" onClick={(e) => this.login()}/>}
             />
         </Paper>
       </div>

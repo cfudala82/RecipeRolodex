@@ -4,7 +4,21 @@ import { Field, reduxForm } from 'redux-form';
 
 import RecipeSvg from '../images/cookie_recipe.jpg';
 
+import database, {User} from '../components/fsociety';
+
 class SaveRecipe extends  Component {
+
+save () {
+  database().ref('recipes/' + User.user.uid).push(
+    {url: 'dhsfjsdhfj', notes: []}
+  );
+
+  // database().ref('/recipes/' + User.user.uid).once('value')
+  //   .then(function(result) {
+  //     var recipes = result.val();
+  //      send redux action
+  //   });
+}
 
 renderField(field) {
   return (
@@ -24,7 +38,7 @@ renderField(field) {
       <div>
         <Paper
           zDepth={5}
-          style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginTop: 20, maxWidth: 500, marginLeft: 'auto', marginRight: 'auto', marginBottom: 20}}
+          style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginTop: 20, maxWidth: 500, marginLeft: 'auto', marginRight: 'auto', marginBottom: 20, backgroundColor: 'green'}}
         >
           <img  src={RecipeSvg} alt="Breakfast Pizza" height="400" width="625" onClick={() => this.imgClick()} />
         </Paper>
