@@ -39,7 +39,8 @@ ReactDOM.render(
    <MuiThemeProvider
      muiTheme={muiTheme}
    >
-      <App />
+
+    <App />
   </MuiThemeProvider>
  </Provider>
   , document.getElementById('root')

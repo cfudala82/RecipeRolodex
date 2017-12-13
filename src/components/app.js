@@ -13,13 +13,15 @@ class App extends Component {
         overflow: 'hidden',
         backgroundImage: "url(" + backgroundImage + ")"
       }}>
-          <NavBar />
           <BrowserRouter>
             <div>
-              <Switch>
-                <Route path="/saverecipe" component={SaveRecipe} />
-                <Route path="/" component={Home} />
-              </Switch>
+              <NavBar />
+              <div>
+                <Switch>
+                  <Route path="/saverecipe" component={SaveRecipe} />
+                  <Route path="/" component={Home} />
+                </Switch>
+              </div>
             </div>
           </BrowserRouter>
       </div>
