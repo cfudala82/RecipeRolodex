@@ -19,11 +19,21 @@ const MenuBar = () => {
       <MenuItem>
         <Link to="/">Home</Link>
       </MenuItem>
-      <MenuItem primaryText="Help" />
+      <MenuItem><Link to="/saverecipe">My Recipes</Link></MenuItem>
       <MenuItem primaryText="Sign out" />
     </IconMenu>
   )
 }
+
+// login () {
+//   auth()
+//     .then(function (user) {
+//       console.log(user);
+//     })
+//     .catch(function (e) {
+//       console.log(e);
+//     });
+// }
 
 class NavBar extends Component {
   render() {
@@ -35,7 +45,7 @@ class NavBar extends Component {
           <AppBar
             title="Recipe Rolodex"
             iconElementLeft={<MenuBar/>}
-            iconElementRight={<FlatButton label="My Recipes" />}
+            iconElementRight={<FlatButton label="Login" />}
             />
         </Paper>
       </div>
