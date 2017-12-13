@@ -15,7 +15,7 @@ import {Link} from 'react-router-dom';
 
 const MenuBar = () => {
   return (
-    <IconMenu iconButtonElement={<IconButton iconStyle={{color: "white"}}><NavigationMenu /></IconButton>}>
+    <IconMenu iconButtonElement={<IconButton iconStyle={{color: "#FFE0B2"}}><NavigationMenu /></IconButton>}>
       <MenuItem>
         <Link to="/">Home</Link>
       </MenuItem>
