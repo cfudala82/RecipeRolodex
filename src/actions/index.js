@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_ID = '';
-const API_KEY = '';
+const API_ID = 'e0f03db0';
+const API_KEY = '71eb7b5a82028669f3590af0bda65a23';
 const ROOT_URL = `https://api.edamam.com/search?appid=${API_ID}&app_key=${API_KEY}&from=0&to=50`;
 
 export const FETCH_RECIPE = 'FETCH_RECIPE'
