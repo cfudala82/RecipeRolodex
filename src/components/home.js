@@ -8,7 +8,7 @@ class Home extends Component {
     return(
       <div>
         <SearchBar />
-        <RecipeList />
+        <RecipeList history={this.props.history}/>
       </div>
 
     );

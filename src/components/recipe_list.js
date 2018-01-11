@@ -25,9 +25,13 @@ const styles = {
 
 
 class RecipeList extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   imgClick(RecipeURL) {
-    console.log(RecipeURL);
-    window.location.href = RecipeURL;
+    var id = RecipeURL.split('#')[1];
+    this.props.history.push('/recipe/' + id);
   }
 
   recipe_list () {
@@ -43,7 +47,7 @@ class RecipeList extends Component {
           key={r.recipe.uri}
           title={r.recipe.label}
           subtitle={<span>from <b>{r.recipe.source}</b></span>}
-          onClick={() => this.imgClick(r.recipe.url)}
+          onClick={() => this.imgClick(r.recipe.uri)}
           actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
         >
           <img src={r.recipe.image} alt={r.recipe.label}/>

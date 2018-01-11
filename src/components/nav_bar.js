@@ -4,10 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import Paper from 'material-ui/Paper';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import MenuItem from 'material-ui/MenuItem';
-import Toggle from 'material-ui/Toggle';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import FlatButton from 'material-ui/FlatButton';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 
@@ -39,7 +36,7 @@ class NavBar extends Component {
         console.log(e);
       });
   }
-  
+
   render() {
     return (
       <div style={{margin: 30}}>

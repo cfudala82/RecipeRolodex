@@ -19,6 +19,7 @@ class App extends Component {
               <div>
                 <Switch>
                   <Route path="/saverecipe" component={SaveRecipe} />
+                  <Route path="/recipe/:id" component={SaveRecipe} />
                   <Route path="/" component={Home} />
                 </Switch>
               </div>
