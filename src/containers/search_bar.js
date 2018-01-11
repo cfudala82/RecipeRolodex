@@ -43,11 +43,23 @@ class SearchBar extends Component {
   render() {
     return (
       <Paper
-        style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', maxWidth: 750, marginLeft: 'auto', marginRight: 'auto'}}
+        style={{display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          maxWidth: 750,
+          marginLeft: 'auto',
+          marginRight: 'auto'
+        }}
         zDepth={5}
         rounded={false}
       >
-        <form onSubmit={(e) => this.submitForm(e)} style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
+        <form onSubmit={(e) => this.submitForm(e)} style={{display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'center'
+          }}
+        >
           <ActionSearch
             style={{alignSelf: 'center', margin: 6}}
           />
