@@ -19,6 +19,11 @@ import Divider from 'material-ui/Divider';
 import { orange50 } from 'material-ui/styles/colors';
 import TextField from 'material-ui/TextField';
 import Subheader from 'material-ui/Subheader';
+import { GridList, GridTile } from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {orange500, blue500} from 'material-ui/styles/colors';
 
 import axios from 'axios';
 
@@ -36,12 +41,19 @@ class SaveRecipe extends  Component {
     this.get_recipe();
   }
 
+  imgClick(RecipeURL) {
+    console.log(RecipeURL);
+    window.location.href = RecipeURL;
+  }
+
   get_recipe() {
     const url = `${ROOT_URL}&r=${this.rid}`;
     axios.get(url)
       .then((response) => {
         this.setState({img: response.data[0].image, ingredients: response.data[0].ingredients,
-        url: response.data[0].url});
+        url: response.data[0].url,
+        label: response.data[0].label,
+        source: response.data[0].source});
       });
   }
 
@@ -89,12 +101,7 @@ renderField(field) {
 
 recipe_list () {
   const initialRecipe = this.state.ingredients;
-
-  // if (this.props.recipe_list.length === 0) {
-  //     this.props.fetchRecipe(initialRecipe);
-  // }
-
-
+  // console.log(this.state.ingredients;
 
 if (this.state.ingredients) {
     return this.state.ingredients.map((r) => {
@@ -115,55 +122,77 @@ if (this.state.ingredients) {
       <div>
         <Paper
           zDepth={5}
-          style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginTop: 20, maxWidth: 500, marginLeft: 'auto', marginRight: 'auto', marginBottom: 20}}
+          style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', marginTop: 20, maxWidth: 350, marginLeft: 'auto', marginRight: 'auto', marginBottom: 20}}
         >
-          <img
-            src={this.state.img}
-            alt="Breakfast Pizza"
-            height="350"
-            width="625"
-            onClick={this.state.url}
-          />
+
+            <GridTile
+              style={{ }}
+              key={this.state.url}
+              title={this.state.label}
+              subtitle={<span>from <b>{this.state.source}</b></span>}
+              onClick={() => this.imgClick(this.state.url)}
+            >
+              <img
+                src={this.state.img}
+                alt={this.state.label}
+                width="350"
+              />
+            </GridTile>
+
         </Paper>
-        <Paper
+        <Card
           zDepth={5}
           style={{display: 'flex',
           flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'center',
-          marginTop: 110,
+          marginTop: 30,
           maxWidth: 500,
+          height: 350,
           marginLeft: 'auto',
           marginRight: 'auto',
           marginBottom: 175,
-          backgroundColor: '#EF6C00',
+          backgroundColor: orange50,
           }}
         >
-          <Divider />
+          {/* <Divider />orange50
           <Subheader
-            style={{color: orange50,
+            style={{color: '#EF6C00',
               fontSize: 20,
             }}
           >
-            Save your Recipe
-          </Subheader>
+            Link to Recipe
+          </Subheader> */}
            <Divider />
           <Subheader
-            style={{color: orange50,
+            style={{color: '#EF6C00',
               fontSize: 20,
+              margin: 30
             }}
           >
-            Recipe Name
+            Save your recipe
           </Subheader>
           <RaisedButton
+            style={{ color: '#EF6C00'}}
             onClick={this.handleClick}
             label="Ingredients List"
-          />
+          /><br/>
+          <TextField
+            hintText="Notes"
+            hintStyle={{ color: '#EF6C00' }}
+            multiLine={true}
+            rows={1}
+            rowsMax={8}
+            style={{ color: '#EF6C00',
+            margin:10}}
+          /><br />
+
           <Popover
+            zDepth={5}
             open={this.state.open}
             anchorEl={this.state.anchorEl}
-            anchorOrigin={{horizontal: 'left', vertical:  'bottom'}}
-            targetOrigin={{horizontal: 'left', vertical: 'top'}}
+            // anchorOrigin={{horizontal: 'left', vertical:  'bottom'}}
+            // targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
             onRequestClose={this.handleRequestClose}
           >
             <List>
@@ -171,7 +200,7 @@ if (this.state.ingredients) {
             </List>
         </Popover>
 
-        </Paper>
+      </Card>
       </div>
     );
 

@@ -48,7 +48,6 @@ class RecipeList extends Component {
           title={r.recipe.label}
           subtitle={<span>from <b>{r.recipe.source}</b></span>}
           onClick={() => this.imgClick(r.recipe.uri)}
-          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
         >
           <img src={r.recipe.image} alt={r.recipe.label}/>
         </GridTile>
