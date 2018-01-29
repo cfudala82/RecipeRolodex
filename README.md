@@ -6,4 +6,4 @@
 
 #### HTML/CSS, JavaScript, Node.js, Material UI, React/Redux, Firebase, Heroku.
 
-![reciperolodex.herokuapp.com](./src/images/screenshot.png?raw=true "Screenshot")
+![reciperolodex.herokuapp.com](/src/images/screenshot.png?raw=true "Screenshot")
