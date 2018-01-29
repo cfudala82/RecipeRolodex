@@ -4,4 +4,4 @@
 
 ### Built with:
 
-#### | HTML | CSS | JAVASCRIPT | NODE.JS | MATERIAL UI | REACT/REDUX | FIREBASE | HEROKU |
+#### HTML/CSS, JavaScript, Node.js, Material UI, React/Redux, Firebase, Heroku.
