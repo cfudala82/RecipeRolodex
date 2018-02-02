@@ -101,7 +101,6 @@ renderField(field) {
 
 recipe_list () {
   const initialRecipe = this.state.ingredients;
-  // console.log(this.state.ingredients;
 
 if (this.state.ingredients) {
     return this.state.ingredients.map((r) => {
@@ -111,11 +110,6 @@ if (this.state.ingredients) {
     });
   }
 }
-
-
-    //   <ListItem primaryText={i.recipe.ingredients.text}  leftIcon={<ContentInbox />} />
-    // )
-
 
   render() {
     return(
@@ -155,14 +149,6 @@ if (this.state.ingredients) {
           backgroundColor: orange50,
           }}
         >
-          {/* <Divider />orange50
-          <Subheader
-            style={{color: '#EF6C00',
-              fontSize: 20,
-            }}
-          >
-            Link to Recipe
-          </Subheader> */}
            <Divider />
           <Subheader
             style={{color: '#EF6C00',
@@ -191,8 +177,6 @@ if (this.state.ingredients) {
             zDepth={5}
             open={this.state.open}
             anchorEl={this.state.anchorEl}
-            // anchorOrigin={{horizontal: 'left', vertical:  'bottom'}}
-            // targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
             onRequestClose={this.handleRequestClose}
           >
             <List>
@@ -216,7 +200,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SaveRecipe);
-
-// export default reduxForm({
-//   form: 'PostNewForm'
-// })(SaveRecipe);
