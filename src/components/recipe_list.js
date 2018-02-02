@@ -8,6 +8,7 @@ import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import Paper from 'material-ui/Paper';
 
+// Styling for Material UI
 const styles = {
   root: {
     display: 'flex',
@@ -23,7 +24,7 @@ const styles = {
   },
 };
 
-
+//
 class RecipeList extends Component {
   constructor(props) {
     super(props);

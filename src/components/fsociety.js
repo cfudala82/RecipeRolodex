@@ -1,5 +1,6 @@
 import * as firebase from "firebase";
 
+// Created Google login using Firebase
 var config = {
   apiKey: "AIzaSyDbBAtaA7JMmySGnpqMNmGDEmgx2mWPMEA",
   authDomain: "recipe-rolodex.firebaseapp.com",
